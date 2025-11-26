@@ -20,13 +20,13 @@ app.use("/", predictRoutes);
 
 // Arranque del servidor + carga del modelo
 app.listen(PORT, async () => {
-  const serverUrl = `http://localhost:${PORT}`;
-  console.log(`[PREDICT] Servicio escuchando en ${serverUrl}`);
+    const serverUrl = `http://localhost:${PORT}`;
+    console.log(`[PREDICT] Servicio escuchando en ${serverUrl}`);
 
-  try {
-    await initModel(serverUrl);
-  } catch (err) {
-    console.error("Error al inicializar modelo:", err);
-    process.exit(1);
-  }
+    try {
+        await initModel(serverUrl);
+    } catch (err) {
+        console.error("Error al inicializar modelo:", err);
+        process.exit(1);
+    }
 });
